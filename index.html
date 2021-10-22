@@ -21,9 +21,9 @@
 
 <header class="bg-dark text-white">
       <div class="container text-center">
-        <h1>DEMO of TalkingIto based on Ito SDEs（基于Ito随机微分方程的新一代多说话人语音合成技术展示）</h1>
+        <h1>基于Ito随机微分方程的新一代高保真多说话人语音合成技术TalkingIto展示</h1>
 		<p class="lead" align="justify">
-            Contact（联系方式）：wu.shoule@protonmail.com, shiziqiang7@gmail.com, 13621160486 
+            联系方式：wu.shoule@protonmail.com, shiziqiang7@gmail.com, 13621160486 
                 </p>
       </div>
     </header>
@@ -45,11 +45,12 @@
 			   声逐渐denoise成text-speaker对应的原始语音。Denoiser的实现机制是通过基于随机微分方程
 			   （SDE）的扩散过程实现的。该过程能够实现目标分布，在我们这里就是mel-spectrogram的分布
 			   和简单高斯分布之间互相的连续正反变换。正变换将mel-spectrogram扩散为高斯分布，而反变
-			   换将高斯分布变换为mel-spectrogram数据分布。其中正反变换由两个不同但是紧密关联的SDE控制。实验结果显示，我们的方法在主观和客观结果上均达到最高性能。
+			   换将高斯分布变换为mel-spectrogram数据分布。其中正反变换由两个不同但是紧密关联的SDE控制。
+			   实验结果显示，我们的方法在主观和客观结果上均达到最高性能。
               </p><p class="lead" align="justify">
               </p><p class="lead" align="justify">
-			  我们的ItoTTS和ItoWave的关键模块有两个，一个是用于预测log语音概率密度梯度值的深度神经网络，一个是基于该梯度值和
-			  反向Ito随机微分方程的采样算法。
+			  我们的TalkingIto的关键模块有两个，一个是用于同时实现文本信息和说话人信息的隐表示的encoder，一个是将随机白噪
+			   声逐渐denoise成text-speaker对应的原始语音的denoiser。
               </p><p class="lead" align="justify">
 
 
@@ -60,16 +61,16 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-8">
-                    <h3>预测log语音概率密度梯度值的深度神经网络</h3>				
+                    <h3>TalkingIto的关键模块框架结构图</h3>				
 					</p><p class="lead" align="justify">
-			  ItoTTS里的预测网络结构
+			  TalkingIto里的encoder网络结构
               </p><p class="lead" align="justify">
-                    <img src="src/itotts_arch.jpg" alt="Italian Trulli" width="750px">
+                    <img src="src/talking_encoder.jpg" alt="Italian Trulli" width="750px">
                     <br>  </br> 
 					</p><p class="lead" align="justify">
-			  ItoWave里的预测网络结构
+			  TalkingIto里的denoiser网络结构
               </p><p class="lead" align="justify">
-			  <img src="src/itowave_arch.jpg" alt="Italian Trulli" width="750px">
+			  <img src="src/talking_denoiser.jpg" alt="Italian Trulli" width="750px">
                 </div>
               </div>
               <br>  </br>
@@ -95,7 +96,7 @@
 
 
             <p class="lead" align="justify">
-               您可以试听下TalkingIto合成的一些声音样本，相应文本如下:
+               您可以试听下TalkingIto合成的不同说话人的声音样本，相应文本如下:
             </p>
             <style type="text/css">
                 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -106,19 +107,19 @@
             </style>
 
 			<p class="lead" align="justify">
-               1. but they proceeded in all seriousness, and would have shrunk from no outrage or atrocity in furtherance of their foolhardy enterprise.
+               1. 爆炸地点在太原街南七马路路口。
             </p>
 			<p class="lead" align="justify">
-               2. three cars for press photographers, an official party bus for white house staff members and others, and two press buses.
+               2. 附近的住户霍佳伟向南方周末记者介绍，太原南街是条商业街。
             </p>
 			<p class="lead" align="justify">
-               3. a base station at a fixed location in dallas operated a radio network which linked together the lead car,
+               3. 我正在睡觉，听到那个声音特别吓人，窗户外面，蘑菇云就起来了。
             </p>
 			<p class="lead" align="justify">
-               4. the lifting had been so complete in this case that there was no trace of the print on the rifle itself when it was examined by latona.
+               4. 永乐建材店的老板也在医院，妻子被爆炸时碎裂的玻璃崩伤，扎破了后背，伤口两厘米，正在接受缝合。
             </p>
 			<p class="lead" align="justify">
-               5. with the active cooperation of the responsible agencies and with the understanding of the people of the united states in their demands upon their president,
+               5. 据中共沈阳市委宣传部21日晚最新通报，事故已造成4人死亡；3人重伤，44人轻伤，均送往医院进行救治；安排36家宾馆，对事故波及群众进行妥善安置。事故原因正在调查之中。
             </p>
 
               <br>  </br>
@@ -224,16 +225,7 @@
             <br>  </br>
 
 
-			<h3>ItoTTS合成较长的语音</h3>
-            <p></p>
-            <p></p>
-                      
-			<p class="lead" align="justify">
-				例如10.21沈阳大爆炸（摘自《南方周末》）：爆炸地点在太原街南七马路路口。附近的住户霍佳伟向南方周末记者介绍，太原南街是条商业街，楼下两三层是商铺，更高层是住户。“我正在睡觉，听到那个声音特别吓人，窗户外面，蘑菇云就起来了。”她家朝西的阳台处，整块玻璃连框消失，掉到楼下。多名居民在爆炸中受伤。住在天津南街的王玲贤，后背和手受伤，接到南方周末记者电话时，正在医院准备接受手术。永乐建材店的老板也在医院，妻子被爆炸时碎裂的玻璃崩伤，扎破了后背，伤口两厘米，正在接受缝合。    </p>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/beijing_rain.wav"
-                        type="audio/wav"></audio></td>
-			</center>
+			
           </div>
         </div>
       </div>
@@ -246,21 +238,11 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-md-6">
-                      <h3>ItoTTS和ItoWave将白噪声变成有意义语音的过程</h3>
+                      <h3>TalkingIto将白噪声变成有意义的不同说话人语音的过程</h3>
 					   </p><p class="lead" align="justify">
-					   以“to be or not to be, this is a big problem”为输入文本，ItoTTS从高斯噪声信号中逐步生成对应mel谱图的过程
+					   以“你站在桥上看风景，看风景人在楼上看你。”为输入文本，TalkingIto从高斯噪声信号中逐步生成不同说话人（A，B，C）对应mel谱图的过程
 			  </p><p class="lead" align="justify">
-                      <img src="src/tobe_itotts_step1.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step100.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step200.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step300.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step400.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step500.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step600.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step700.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step800.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step900.png" alt="Italian Trulli" width="500px">
-					  <img src="src/tobe_itotts_step1000.png" alt="Italian Trulli" width="500px">
+                      <img src="src/talkingito_diffusion.png" alt="Italian Trulli" width="500px">
                     </div>
                   </div>
                 </div>
@@ -270,26 +252,7 @@
         </section>
 
  <br>  </br>
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-6">
-                      </p><p class="lead" align="justify">
-			  以LJSpeech中句子LJ032-0167的频谱为输入，ItoWave从高斯噪声信号中逐步生成相应的语音的过程。 相应的文本是“he concluded, quote, there is no doubt in my mind that these fibers could have come from thisshirt.”
-              </p><p class="lead" align="justify">
-					  <img src="src/predicted_LJ032-0167_step1.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step100.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step200.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step300.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step400.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step500.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step600.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step700.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step800.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step900.png" alt="Italian Trulli" width="500px">
-					  <img src="src/predicted_LJ032-0167_step1000.png" alt="Italian Trulli" width="500px">
-                    </div>
-                  </div>
-                </div>
+         
 
             </div>
           </div>
