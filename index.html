@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ItoTTS and ItoWave</title>
+    <title>TalkingIto</title>
 
     <!-- Bootstrap core CSS -->
     <link href="src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 
 <header class="bg-dark text-white">
       <div class="container text-center">
-        <h1>DEMO of ItoTTS and ItoWave based on Ito SDEs（基于Ito随机微分方程的新一代语音合成技术展示）</h1>
+        <h1>DEMO of TalkingIto based on Ito SDEs（基于Ito随机微分方程的新一代多说话人语音合成技术展示）</h1>
 		<p class="lead" align="justify">
             Contact（联系方式）：wu.shoule@protonmail.com, shiziqiang7@gmail.com, 13621160486 
                 </p>
@@ -36,16 +36,16 @@
         <div class="row">
           <div class="col-md-15 mx-auto">
             <p class="lead" align="justify">
-            本展示DEMO主要介绍ItoTTS和ItoWave，一种基于Ito随机微分方程的新一代语音合成的最新技术。
+            本展示DEMO主要展示和介绍TalkingIto，一种基于Ito随机微分方程的新一代多说话人语音合成的最新技术。
                 </p><p class="lead" align="justify">
-               ItoTTS和ItoWave旨在解决从文本生成语音的问题。 我们提出通过线性Ito随机微分方程，在条件输入下，
-			   如原始文本或者原始声音特征（例如语音mel谱），利用维纳过程作为驱动，在噪声信号中逐渐减去多余的信号，
-			   从而生成现实中对应的有意义的语音。这个过程很像是奥古斯特·罗丹从原始自然的石头中，利用雕刻技术和方法，
-			   从自然的石头中逐渐去掉多余的部分，从而雕刻出思想者。我们的方法将语音合成中的两个重要方面，
-			   也就是text-to-speech（TTS）和声码器（vocoder）统一在一个框架下完成了，我们分别称为ItoTTS和ItoWave。
-			   这个统一框架由两个随机过程组成，而这两个随机过程分别是线性Ito随机微分方程和其对应的反向时间Ito随机微分方程所确定的解。
-			   这两个随机过程，特别是反向的随机过程可以在文本输入条件下生成mel特征（ItoTTS）；或者在mel特征条件下，
-			   生成对应的连续声音（ItoWave）。实验结果显示，我们的主观听众MOS评分达到世界最高水平。
+               TalkingIto是一种基于encoder-denoiser框架结构对多个说话人的声音进行建模的技术，也就是多
+			   说话人语音合成。我们的框架相比于其他的许多基于深度神经网络 (DNN) 的方法，更容易训练，
+			   网络结构选择灵活，合成的效果更好。在我们的框架中，首先用encoder来同时实现文本信息和
+			   说话人信息的隐表示，而denoiser能够实现在此text-speaker隐表示的条件输入下，将随机白噪
+			   声逐渐denoise成text-speaker对应的原始语音。Denoiser的实现机制是通过基于随机微分方程
+			   （SDE）的扩散过程实现的。该过程能够实现目标分布，在我们这里就是mel-spectrogram的分布
+			   和简单高斯分布之间互相的连续正反变换。正变换将mel-spectrogram扩散为高斯分布，而反变
+			   换将高斯分布变换为mel-spectrogram数据分布。其中正反变换由两个不同但是紧密关联的SDE控制。实验结果显示，我们的方法在主观和客观结果上均达到最高性能。
               </p><p class="lead" align="justify">
               </p><p class="lead" align="justify">
 			  我们的ItoTTS和ItoWave的关键模块有两个，一个是用于预测log语音概率密度梯度值的深度神经网络，一个是基于该梯度值和
@@ -95,7 +95,7 @@
 
 
             <p class="lead" align="justify">
-               您可以试听下ItoTTS和ItoWave合成的一些声音样本，相应文本如下:
+               您可以试听下TalkingIto合成的一些声音样本，相应文本如下:
             </p>
             <style type="text/css">
                 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -125,7 +125,7 @@
 
 	      
 	       <center>
-            <h3>ItoTTS和其他TTS系统的合成效果比较</h3>
+            <h3>TalkingIto和其他多说话人语音合成系统的效果比较</h3>
             <p></p>
             <p></p>
             <table>
@@ -217,127 +217,6 @@
 
 
 
-             
-
-
-            <h3>ItoWave和其他vocoder系统的合成效果比较</h3>
-            <p></p>
-            <p></p>
-            <table>
-              <thead>
-                <tr>
-                      <th>原始真人语音</th>
-                  <th>WaveNet合成的语音</th>
-				  <th>WaveGlow合成的语音</th>
-				  <th>DiffWave合成的语音</th>
-				  <th>WaveGrad合成的语音</th>
-                  <th>ItoWave合成的语音</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr style="border-top:1px solid black">
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ010-0062.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavenet/LJ010-0062.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/waveglow/LJ010-0062.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/diffwave/LJ010-0062.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavegrad/LJ010-0062.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itowave/LJ010-0062.wav"
-                        type="audio/wav"></audio></td>
-                </tr>
-                 <tr style="border-top:1px solid black">
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ030-0100.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavenet/LJ030-0100.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/waveglow/LJ030-0100.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/diffwave/LJ030-0100.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavegrad/LJ030-0100.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itowave/LJ030-0100.wav"
-                        type="audio/wav"></audio></td>
-                </tr>
-				<tr style="border-top:1px solid black">
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ030-0106.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavenet/LJ030-0106.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/waveglow/LJ030-0106.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/diffwave/LJ030-0106.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavegrad/LJ030-0106.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itowave/LJ030-0106.wav"
-                        type="audio/wav"></audio></td>
-                </tr>
-				<tr style="border-top:1px solid black">
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavenet/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/waveglow/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/diffwave/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavegrad/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itowave/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-                </tr>
-				<tr style="border-top:1px solid black">
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavenet/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/waveglow/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/diffwave/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/wavegrad/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itowave/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-                </tr>
-              </tbody>
-            </table>
-
               <br>
 
            
@@ -350,8 +229,7 @@
             <p></p>
                       
 			<p class="lead" align="justify">
-				例如7.12北京大暴雨（from china daily）：Beijing took multiple measures on Monday to cope with the heaviest rain to hit the capital this year. The downpours, along with strong winds, started on Sunday night and are forecast to last until Tuesday morning. From 6 pm on Sunday to 7 pm on Monday, an average of 100.4 millimeters of rain fell across the capital, according to the city's meteorological bureau. However, by late Monday afternoon there was no deep surface water on major roads in urban areas, after city authorities activated pumping stations. Flood warnings were also issued for residents of high-risk areas. Kindergartens and primary and secondary schools in the city suspended classes on Monday and company employees were encouraged to work from home or alter their travel times.
-            </p>
+				例如10.21沈阳大爆炸（摘自《南方周末》）：爆炸地点在太原街南七马路路口。附近的住户霍佳伟向南方周末记者介绍，太原南街是条商业街，楼下两三层是商铺，更高层是住户。“我正在睡觉，听到那个声音特别吓人，窗户外面，蘑菇云就起来了。”她家朝西的阳台处，整块玻璃连框消失，掉到楼下。多名居民在爆炸中受伤。住在天津南街的王玲贤，后背和手受伤，接到南方周末记者电话时，正在医院准备接受手术。永乐建材店的老板也在医院，妻子被爆炸时碎裂的玻璃崩伤，扎破了后背，伤口两厘米，正在接受缝合。    </p>
 						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
                       <source src="src/beijing_rain.wav"
                         type="audio/wav"></audio></td>
@@ -428,8 +306,8 @@
           <div class="col-lg-13 mx-auto">
               <p class="lead" align="justify">
 		  <p class="lead" align="justify">
-			    [1]. Shoule Wu, Ziqiang Shi. ItoTTS and ItoWave: Linear Stochastic Differential Equation Is All You Need For Audio Generation.
-			 https://arxiv.org/abs/2105.07583
+			    [1]. Shoule Wu, Ziqiang Shi. TALKINGITO: MULTI-SPEAKER SPEECH GENERATION WITH ENCODER-DENOISER ˆ
+FRAMEWORK USING ITO STOCHASTIC DIFFERENTIAL EQUATIONS.
                     </p>
               </p>
           </div>
