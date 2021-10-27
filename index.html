@@ -37,20 +37,10 @@
           <div class="col-md-15 mx-auto">
             <p class="lead" align="justify">
             本展示DEMO主要展示和介绍TalkingIto，一种基于Ito随机微分方程的新一代多说话人语音合成的最新技术。
-                </p><p class="lead" align="justify">
-               TalkingIto是一种基于encoder-denoiser框架结构对多个说话人的声音进行建模的技术，也就是多
-			   说话人语音合成。我们的框架相比于其他的许多基于深度神经网络 (DNN) 的方法，更容易训练，
-			   网络结构选择灵活，合成的效果更好。在我们的框架中，首先用encoder来同时实现文本信息和
-			   说话人信息的隐表示，而denoiser能够实现在此text-speaker隐表示的条件输入下，将随机白噪
-			   声逐渐denoise成text-speaker对应的原始语音。Denoiser的实现机制是通过基于随机微分方程
-			   （SDE）的扩散过程实现的。该过程能够实现目标分布，在我们这里就是mel-spectrogram的分布
-			   和简单高斯分布之间互相的连续正反变换。正变换将mel-spectrogram扩散为高斯分布，而反变
-			   换将高斯分布变换为mel-spectrogram数据分布。其中正反变换由两个不同但是紧密关联的SDE控制。
-			   实验结果显示，我们的方法在主观和客观结果上均达到最高性能。
+                </p><p class="lead" align="justify">  TalkingIto是一种基于encoder-denoiser框架结构对多个说话人的声音进行建模的技术，也就是用一个模型实现多说话人语音合成。我们的框架相比于其他的许多基于深度神经网络(DNN)的方法，更容易训练，网络结构选择灵活，合成的效果更好。在我们的框架中，首先用encoder来同时实现文本信息和说话人信息的隐表示，而denoiser能够实现在此text-speaker隐表示的条件输入下，将随机白噪声逐渐denoise成text-speaker对应的原始语音。Denoiser的实现机制是通过基于随机微分方程（SDE）的扩散过程实现的。该过程能够实现目标分布，在我们这里就是mel-spectrogram的分布和简单高斯分布之间互相的连续正反变换。正变换将mel-spectrogram扩散为高斯分布，而反变换将高斯分布变换为mel-spectrogram数据分布。其中正反变换由两个不同但是紧密关联的SDE控制。实验结果显示，我们的方法在主观和客观结果上均达到最高性能。
               </p><p class="lead" align="justify">
               </p><p class="lead" align="justify">
-			  我们的TalkingIto的关键模块有两个，一个是用于同时实现文本信息和说话人信息的隐表示的encoder，一个是将随机白噪
-			   声逐渐denoise成text-speaker对应的原始语音的denoiser。
+			  我们的TalkingIto的关键模块有两个，一个是用于同时实现文本信息和说话人信息的隐表示的encoder，一个是将随机白噪声逐渐denoise成text-speaker对应的原始语音的denoiser。
               </p><p class="lead" align="justify">
 
 
@@ -65,12 +55,12 @@
 					</p><p class="lead" align="justify">
 			  TalkingIto里的encoder网络结构
               </p><p class="lead" align="justify">
-                    <img src="src/talking_encoder.jpg" alt="Italian Trulli" width="750px">
+                    <img src="src/talking_encoder.jpg" alt="Italian Trulli" width="500px">
                     <br>  </br> 
 					</p><p class="lead" align="justify">
 			  TalkingIto里的denoiser网络结构
               </p><p class="lead" align="justify">
-			  <img src="src/talking_denoiser.jpg" alt="Italian Trulli" width="750px">
+			  <img src="src/talking_denoiser.jpg" alt="Italian Trulli" width="500px">
                 </div>
               </div>
               <br>  </br>
@@ -96,7 +86,7 @@
 
 
             <p class="lead" align="justify">
-               您可以试听下TalkingIto合成的不同说话人的声音样本，相应文本如下:
+               您可以试听下TalkingIto合成的不同说话人的声音样本。
             </p>
             <style type="text/css">
                 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -106,21 +96,6 @@
                 audio { width: 130px; }
             </style>
 
-			<p class="lead" align="justify">
-               1. 爆炸地点在太原街南七马路路口。
-            </p>
-			<p class="lead" align="justify">
-               2. 附近的住户霍佳伟向南方周末记者介绍，太原南街是条商业街。
-            </p>
-			<p class="lead" align="justify">
-               3. 我正在睡觉，听到那个声音特别吓人，窗户外面，蘑菇云就起来了。
-            </p>
-			<p class="lead" align="justify">
-               4. 永乐建材店的老板也在医院，妻子被爆炸时碎裂的玻璃崩伤，扎破了后背，伤口两厘米，正在接受缝合。
-            </p>
-			<p class="lead" align="justify">
-               5. 据中共沈阳市委宣传部21日晚最新通报，事故已造成4人死亡；3人重伤，44人轻伤，均送往医院进行救治；安排36家宾馆，对事故波及群众进行妥善安置。事故原因正在调查之中。
-            </p>
 
               <br>  </br>
 
@@ -129,90 +104,472 @@
             <h3>TalkingIto和其他多说话人语音合成系统的效果比较</h3>
             <p></p>
             <p></p>
+			 <p class="lead" align="justify">
+               说话人A：
+            </p>
+			<p class="lead" align="justify">
+               1. 第一个栏就严重打栏，最终仅获得第四名，无缘登上颁奖台。
+            </p>
+			<p class="lead" align="justify">
+               2. 压轴大戏是悬念迭出的女子四乘一百米接力的比赛。
+            </p>
+			<p class="lead" align="justify">
+               3. 你似乎是这里唯一一个没有把缺点写出来的人。
+            </p>
             <table>
               <thead>
                 <tr>
                   <th>原始真人语音</th>
                   <th>FastSpeech 2合成的语音</th>
-				  <th>Tacotron 2合成的语音</th>
-				  <th>ItoTTS合成的语音</th>
+				  <th>TalkingIto合成的语音</th>
                 </tr>
               </thead>
               <tbody>
 					 <tr style="border-top:1px solid black">
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ010-0062.wav"
+                      <source src="src/ground_truth_wavs/SSB07360022.wav"
                         type="audio/wav"></audio></td>
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/fastspeech2/LJ010-0062.wav"
+                      <source src="src/fastspeech2_wavs/第一个栏就严重打栏，最终仅获得第四名，无缘登上颁奖台。.wav"
                         type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/tacotron2/LJ010-0062.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itotts/LJ010-0062.wav"
+				<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ010-0062.wav"
                         type="audio/wav"></audio></td>
                 </tr>
 			<tr style="border-top:1px solid black">
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ030-0100.wav"
+                      <source src="src/ground_truth_wavs/SSB07360129.wav"
                         type="audio/wav"></audio></td>
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/fastspeech2/LJ030-0100.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/tacotron2/LJ030-0100.wav"
+                      <source src="src/fastspeech2_wavs/压轴大戏是悬念迭出的女子四乘一百米接力的比赛。.wav"
                         type="audio/wav"></audio></td>
 						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itotts/LJ030-0100.wav"
+                      <source src="src/talkingito_wavs/LJ030-0100.wav"
                         type="audio/wav"></audio></td>
                 </tr>
 				<tr style="border-top:1px solid black">
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ030-0106.wav"
+                      <source src="src/ground_truth_wavs/SSB07360491.wav"
                         type="audio/wav"></audio></td>
                   <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/fastspeech2/LJ030-0106.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/tacotron2/LJ030-0106.wav"
+                      <source src="src/fastspeech2_wavs/你似乎是这里唯一一个没有把缺点写出来的人。.wav"
                         type="audio/wav"></audio></td>
 						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itotts/LJ030-0106.wav"
-                        type="audio/wav"></audio></td>
-                </tr>
-				<tr style="border-top:1px solid black">
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/fastspeech2/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/tacotron2/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itotts/LJ032-0137.wav"
-                        type="audio/wav"></audio></td>
-                </tr>
-				<tr style="border-top:1px solid black">
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/groundtruth/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/fastspeech2/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/tacotron2/LJ050-0277.wav"
-                        type="audio/wav"></audio></td>
-						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
-                      <source src="src/waves_for_github/itotts/LJ050-0277.wav"
+                      <source src="src/talkingito_wavs/LJ030-0106.wav"
                         type="audio/wav"></audio></td>
                 </tr>
               </tbody>
             </table>
 
-             
+            
+<p class="lead" align="justify">
+               说话人B：
+            </p>
+			<p class="lead" align="justify">
+               1. 第一个栏就严重打栏，最终仅获得第四名，无缘登上颁奖台。
+            </p>
+			<p class="lead" align="justify">
+               2. 压轴大戏是悬念迭出的女子四乘一百米接力的比赛。
+            </p>
+			<p class="lead" align="justify">
+               3. 你似乎是这里唯一一个没有把缺点写出来的人。
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>原始真人语音</th>
+                  <th>FastSpeech 2合成的语音</th>
+				  <th>TalkingIto合成的语音</th>
+                </tr>
+              </thead>
+              <tbody>
+					 <tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+				<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+			<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+              </tbody>
+            </table>
+			
+			
+			
+			
+			
+			<p class="lead" align="justify">
+               说话人A：
+            </p>
+			<p class="lead" align="justify">
+               1. 第一个栏就严重打栏，最终仅获得第四名，无缘登上颁奖台。
+            </p>
+			<p class="lead" align="justify">
+               2. 压轴大戏是悬念迭出的女子四乘一百米接力的比赛。
+            </p>
+			<p class="lead" align="justify">
+               3. 你似乎是这里唯一一个没有把缺点写出来的人。
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>原始真人语音</th>
+                  <th>FastSpeech 2合成的语音</th>
+				  <th>TalkingIto合成的语音</th>
+                </tr>
+              </thead>
+              <tbody>
+					 <tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+				<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+			<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+              </tbody>
+            </table>
+			
+			
+			
+			
+			<p class="lead" align="justify">
+               说话人A：
+            </p>
+			<p class="lead" align="justify">
+               1. 第一个栏就严重打栏，最终仅获得第四名，无缘登上颁奖台。
+            </p>
+			<p class="lead" align="justify">
+               2. 压轴大戏是悬念迭出的女子四乘一百米接力的比赛。
+            </p>
+			<p class="lead" align="justify">
+               3. 你似乎是这里唯一一个没有把缺点写出来的人。
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>原始真人语音</th>
+                  <th>FastSpeech 2合成的语音</th>
+				  <th>TalkingIto合成的语音</th>
+                </tr>
+              </thead>
+              <tbody>
+					 <tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+				<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+			<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+              </tbody>
+            </table>
+			
+			
+			
+			<p class="lead" align="justify">
+               说话人A：
+            </p>
+			<p class="lead" align="justify">
+               1. 第一个栏就严重打栏，最终仅获得第四名，无缘登上颁奖台。
+            </p>
+			<p class="lead" align="justify">
+               2. 压轴大戏是悬念迭出的女子四乘一百米接力的比赛。
+            </p>
+			<p class="lead" align="justify">
+               3. 你似乎是这里唯一一个没有把缺点写出来的人。
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>原始真人语音</th>
+                  <th>FastSpeech 2合成的语音</th>
+				  <th>TalkingIto合成的语音</th>
+                </tr>
+              </thead>
+              <tbody>
+					 <tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+				<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+			<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+              </tbody>
+            </table>
+			
+			
+			
+			<p class="lead" align="justify">
+               说话人A：
+            </p>
+			<p class="lead" align="justify">
+               1. 第一个栏就严重打栏，最终仅获得第四名，无缘登上颁奖台。
+            </p>
+			<p class="lead" align="justify">
+               2. 压轴大戏是悬念迭出的女子四乘一百米接力的比赛。
+            </p>
+			<p class="lead" align="justify">
+               3. 你似乎是这里唯一一个没有把缺点写出来的人。
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>原始真人语音</th>
+                  <th>FastSpeech 2合成的语音</th>
+				  <th>TalkingIto合成的语音</th>
+                </tr>
+              </thead>
+              <tbody>
+					 <tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+				<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ010-0062.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+			<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ030-0100.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ030-0106.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ032-0137.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+				<tr style="border-top:1px solid black">
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/ground_truth_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+                  <td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/fastspeech2_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+						<td><audio controls class="audio-player" preload="metadata" style="width: 180px;">
+                      <source src="src/talkingito_wavs/LJ050-0277.wav"
+                        type="audio/wav"></audio></td>
+                </tr>
+              </tbody>
+            </table>
+			
+
+			
 
               <br>  </br>
 
@@ -240,9 +597,9 @@
                     <div class="col-md-6">
                       <h3>TalkingIto将白噪声变成有意义的不同说话人语音的过程</h3>
 					   </p><p class="lead" align="justify">
-					   以“你站在桥上看风景，看风景人在楼上看你。”为输入文本，TalkingIto从高斯噪声信号中逐步生成不同说话人（A，B，C）对应mel谱图的过程
+					   以“你站在桥上看风景，看风景人在楼上看你。”为输入文本，TalkingIto从高斯噪声信号中逐步生成不同说话人对应mel谱图的过程
 			  </p><p class="lead" align="justify">
-                      <img src="src/talkingito_diffusion.png" alt="Italian Trulli" width="500px">
+                      <img src="src/talkingito_diffusion.png" alt="Italian Trulli" width="800px">
                     </div>
                   </div>
                 </div>
